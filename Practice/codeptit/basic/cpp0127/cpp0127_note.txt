@@ -1,0 +1,20 @@
+given an positive integer n: find first two prime numbers a and 
+b such that a + b = n. If there are none, print "-1"
+
+1,First try:
+- using the outer loop from 2 to n, for each time check if i is the prime number
+    + if it is, using the inner loop from 2 to n , each time check if i + j == n and print out the result
+
+- using the `ok` variable to track if it has the pair or not. If not, print "-1"
+
+RESULT : TLE > 2.0s
+
+2. Using the suggestion of CoPilot:
+- using the loop from 2 to n /2 .For each time, check if i and n - i is prime numbers, if it is, assign it respectively to a, b variable (first initialised to 0) and break the loop
+- out of the loop, check if a and b is still 0. If it is, it means that there is no valid pair , so we print "-1"
+else we print and exit
+
+RESULT : AC 
+3. try to do the same algorithms but using the loop from 2 to sqrt(n)
+
+RESULT : WA
