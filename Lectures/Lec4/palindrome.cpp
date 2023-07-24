@@ -72,9 +72,9 @@ int D3(int i, int j) {
                 b[j] = max(a[j], b[j - 1]);
             }
         }
-            int *c = a;
-                a = b;
-                b = c;
+        int *c = a;
+        a = b;
+        b = c;
     }
     //dien tu duoi len
     return a[n - 1];
@@ -89,6 +89,7 @@ int Palindrome(string input) {
     // cout << "\n So lan goi ham D: " << c << endl;
     // return n - D(0, n - 1);
 }
+
 int main () {
     // Palindrome("baeadbadb");
     Palindrome("a1bc2d3ed4cbaa1bc2d3ed4cbaa1bc2da1bc2d3ed4cbaa1bc2d3ed4cbaa1bc2da1bc2d3ed4cbaa1bc2d3ed4cbaa1bc2da1bc2d3ed4cbaa1bc2d3ed4cbaa1bc2da1bc2d3ed4cbaa1bc2d3ed4cbaa1bc2d");

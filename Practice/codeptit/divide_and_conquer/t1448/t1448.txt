@@ -1,0 +1,6 @@
+#attempt 1
+using simple dynamic programming with one loop
+result : WA
+
+#attempt 2
+using matrix exponention to find the fibonacci number

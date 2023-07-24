@@ -1,0 +1,2 @@
+now that two array are both sorted so we just compare b[i] with a[i] to find the index
+result: AC

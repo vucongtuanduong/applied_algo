@@ -1,0 +1,10 @@
+#attempt 1
+using simple binary search is not correct
+result:WA
+
+#attempt 2
+using `lower_bound(a, a+ n, k)` function: the function will return the iterator point to the first value that not less than k
+to find index: int index = lower_bount(a, a + n, k) - a;
+-> check if the index is out of range or the value at the index not equal to k to print NO 
+
+result: AC

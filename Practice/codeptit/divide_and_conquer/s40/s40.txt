@@ -1,0 +1,9 @@
+algorithm of power operation using divide and conquer method:
+n^k
+base problem: k =0 -> return 1
+recursive:
+x = pow(n, k / 2) (recursion)
+if k is even:
+    so the result is x * x % MOD 
+else:
+    so the result is (n * (x * x % MOD)) % MOD
