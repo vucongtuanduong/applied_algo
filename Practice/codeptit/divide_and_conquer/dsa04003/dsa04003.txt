@@ -1,0 +1,6 @@
+implement function is AI's
+result:MLE
+
+
+AC code:
+kien thuc la 2^(n -1) la so day co tong bang n

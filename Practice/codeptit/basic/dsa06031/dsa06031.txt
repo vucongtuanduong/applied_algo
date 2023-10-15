@@ -1,0 +1,34 @@
+ The code finds the maximum element in each subarray of size k in an array.
+ Let's go through the code step by step to understand it: 1.
+ The function `testCase()` takes input for n and k (the size of the array and subarray respectively).
+ - It creates a vector `a` of size n to store the elements of the array.
+ - Then, it loops through each element of the array and reads its value using `cin`.
+ The input values are stored in the vector `a`.
+ - A deque (`dq`) is created to keep track of indices.
+ A deque is used because it supports efficient insertion and deletion operations from both ends.
+ - Next, a loop runs from 0 to n-1 (denoted by variable `i`) to iterate over each element in the array.
+ - Inside the loop, we check if the front element of deque (`dq.front()`) equals `(i-k)`.
+ If it does, it means that index has moved out of range and needs to be removed from the deque using `dq.pop_front()`.
+ - In every iteration, we pop elements from the back until either deque becomes empty or we find an element greater than or equal to the current element (`a[i]`).
+ The idea here is to maintain a descending ordered sequence within deque where front always contains maximum value so far.
+ - After that, we push the current index (`i`) into deque (`dq.push_back(i)`).
+ - Finally, if `(i + 1 >= k)`, which means at least `k` elements are available, then output `a[dq.front()]`, which is guaranteed to be maximum value in current subarray since all smaller values have been discarded
+
+ #2
+This is a C++ code that solves a problem using the concept of sliding window maximum.
+ First, the code includes the necessary libraries for input/output and algorithmic operations.
+ Then, the main function begins by disabling the synchronization between cin/cout with scanf/printf for faster I/O operations.
+ The code reads an integer t which represents the number of test cases.
+ Inside a while loop that runs for t times, it reads two integers n and k representing the size of an array and the length of the sliding window respectively.
+ Then, it reads n elements into an array 'a'.
+ A deque data structure is used to simulate a window of size k. The deque keeps track of indices as we slide through the array 'a'.
+ The maximum element in each window is found by comparing against previous windows' values.
+ To start, we fill up the deque with indices from 0 to k-1, and initialize a variable 'ans' with INT_MIN (smallest possible value for int) since we want to maximize this value.
+ For each iteration in the while loop, we output 'ans' followed by a space (this outputs all maximum elements so far).
+ Then we enter another loop starting from k until n-1 and do some computations Inside this second loop: - We push_back (add at end) i (current index) in dq.
+ - ans is updated to be max(ans, a[i]) so that if current element is greater than already found maxs then assigned indexed in sqube[0] dataset node.
+ The last line does nothing currently except closing brackets incorrectly(previous authors typo not mine!
+ After exiting both loops (i.e., processing all indices), one iteration or test case ends so next occurs as
+ The code compiles and runs as expected.
+ The code creates an integer array of size n, initializes it to the value INT_MIN, and iterates over the array while calling a function that calculates the maximum value in the array.
+ The function returns this maximum value as an integer value.

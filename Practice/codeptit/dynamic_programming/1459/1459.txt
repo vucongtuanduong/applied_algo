@@ -1,0 +1,2 @@
+with the full help of coPilot
+result: WA

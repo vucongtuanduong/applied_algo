@@ -1,0 +1,53 @@
+Sure, I'll try to explain how the algorithm works. The program is written in C++ and it is supposed to find the number of pairs of elements in an array that have a sum equal to a given value k.
+
+The main steps of the algorithm are:
+
+1. Read the number of test cases T and loop through them.
+2. For each test case, read the size of the array n and the value of k.
+3. Create a vector of integers a with size n and read its elements from the input.
+4. Sort the vector a in ascending order using the `sort` function from the `<algorithm>` header.
+5. Initialize a long long variable ans to store the answer and set it to zero.
+6. Loop through the vector a from index 0 to n-1, and for each element a[i], do the following:
+    - Use the `upper_bound` and `lower_bound` functions from the `<algorithm>` header to find the range of elements in a that have a value equal to k - a[i]. These functions return iterators pointing to the first element that is greater than or not less than the given value, respectively¹².
+    - Subtract the lower bound iterator from the upper bound iterator to get the number of elements that have a value equal to k - a[i], and add this number to ans.
+7. Print ans as the final answer for this test case.
+
+Here is an example of how the algorithm works on a sample input:
+
+```
+Input:
+1
+6 10
+5 1 6 8 10 14
+
+Output:
+2
+```
+
+Explanation:
+
+- There is only one test case, so T = 1.
+- The size of the array is n = 6 and the value of k is 10.
+- The vector a is [5, 1, 6, 8, 10, 14] after reading from the input.
+- After sorting, the vector a becomes [1, 5, 6, 8, 10, 14].
+- The variable ans is initialized to zero.
+- The loop starts from i = 0 and ends at i = n-1 = 5.
+    - When i = 0, a[i] = 1. We need to find how many elements in a have a value equal to k - a[i] = 10 - 1 = 9. Using `upper_bound` and `lower_bound`, we get that there are no such elements, so we add zero to ans.
+    - When i = 1, a[i] = 5. We need to find how many elements in a have a value equal to k - a[i] = 10 - 5 = 5. Using `upper_bound` and `lower_bound`, we get that there is one such element at index 1, so we add one to ans.
+    - When i = 2, a[i] = 6. We need to find how many elements in a have a value equal to k - a[i] = 10 - 6 = 4. Using `upper_bound` and `lower_bound`, we get that there are no such elements, so we add zero to ans.
+    - When i = 3, a[i] = 8. We need to find how many elements in a have a value equal to k - a[i] = 10 - 8 = 2. Using `upper_bound` and `lower_bound`, we get that there are no such elements, so we add zero to ans.
+    - When i = 4, a[i] = 10. We need to find how many elements in a have a value equal to k - a[i] = 10 - 10 = 0. Using `upper_bound` and `lower_bound`, we get that there are no such elements, so we add zero to ans.
+    - When i = 5, a[i] = 14. We need to find how many elements in a have a value equal to k - a[i] = 10 - 14 = -4. Using `upper_bound` and `lower_bound`, we get that there are no such elements, so we add zero to ans.
+- The final answer is ans = **2**, which is printed as output.
+
+I hope this explanation helps you understand how the algorithm works. If you want to learn more about `upper_bound` and `lower_bound` functions in C++, you can check out these links:
+
+¹: https://www.geeksforgeeks.org/upper_bound-and-lower_bound-for-vector-in-cpp-stl/
+²: https://en.cppreference.com/w/cpp/algorithm/upper_bound
+
+Source: Conversation with Bing, 8/1/2023
+(1) std::upper_bound and std::lower_bound for Vector in C++ STL. https://www.geeksforgeeks.org/upper_bound-and-lower_bound-for-vector-in-cpp-stl/.
+(2) std::upper_bound - cppreference.com. https://en.cppreference.com/w/cpp/algorithm/upper_bound.
+(3) Tìm phần tử trong set C++ (find, lower_bound, upper_bound, equal_range .... https://laptrinhcanban.com/cpp/lap-trinh-cpp-co-ban/set-trong-cpp/tim-va-dem-phan-tu-trong-set-cpp/.
+(4) Lower bound and upper bound of C++ | by Jimmy (xiaoke) Shen | Medium. https://jimmy-shen.medium.com/lower-bound-and-upper-bound-of-c-2f635619fa97.
+(5) C++ Using lower_bound() and upper_bound() methods in Map in STL. https://www.studytonight.com/cpp-programs/cpp-using-lower_bound-and-upper_bound-methods-in-map-in-stl.
