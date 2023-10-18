@@ -1,21 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 void testCase () {
-    int n;
+    string n;
     cin >> n;
-    int digits = log10(n) ;
-    int x = n / pow(10, digits);
-    int res = x % 10;
-    if (res > 5) {
-        cout << (x + 1) * pow(10, digits) << endl;
-    } else {
-        cout << x * pow(10, digits) << endl;
+    int len = n.size();
+    int t = len - 1;
+    while (t >= 0 && n[t] == '0') t--;
+    if (t == -1) {
+        cout << 1;
+        for (int i = 0; i < len - 1; i++) cout << 0;
+        return;
     }
+    n[t] = '0';
+    for (int i = t + 1; i < len; i++) n[i] = '1';
+    cout << n;
+    
 }
 int main () {
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
     int t;
     cin >> t;
     while(t--) {
         testCase();
+        cout << endl;
     }
 }
